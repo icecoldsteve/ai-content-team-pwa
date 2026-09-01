@@ -14,14 +14,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Content HQ — AI Content Team",
+  title: "Volta — Seven specialists. One loop.",
   description:
-    "Seven AI employees. One creator. Research to publish with Claude and Grok Imagine.",
-  applicationName: "Content HQ",
+    "Volta is an AI content company in your pocket. Claude writes. Grok Imagine designs. You approve.",
+  applicationName: "Volta",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
-    title: "Content HQ",
+    title: "Volta",
     statusBarStyle: "default",
   },
   icons: { icon: "/icon.svg", apple: "/icon.svg" },

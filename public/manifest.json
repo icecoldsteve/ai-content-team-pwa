@@ -1,7 +1,7 @@
 {
-  "name": "Content HQ — AI Content Team",
-  "short_name": "Content HQ",
-  "description": "Seven AI employees. One creator. Research to publish with Claude and Grok Imagine.",
+  "name": "Volta",
+  "short_name": "Volta",
+  "description": "Seven specialists. One loop. Claude + Grok Imagine content crew.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F4F6F8",
