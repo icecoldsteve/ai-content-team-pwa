@@ -1,4 +1,4 @@
-const CACHE = "content-hq-v1";
+const CACHE = "volta-v2";
 const PRECACHE = ["/", "/manifest.json"];
 
 self.addEventListener("install", (event) => {
