@@ -1,10 +1,9 @@
 import type { BrandKit, Job, Learning, PublishedItem } from "./types";
+import { loadSession, ns } from "./session";
 
-const JOBS = "volta.jobs";
-const KEYS = "volta.keys";
-const BRAND = "volta.brand";
-const LEARN = "volta.learnings";
-const POSTED = "volta.published";
+function k(name: string) {
+  return ns(loadSession()?.userId, name);
+}
 
 export interface ApiKeys {
   anthropic: string;
@@ -24,11 +23,11 @@ export const defaultKeys = (): ApiKeys => ({
 
 export const defaultBrand = (): BrandKit => ({
   voice: "direct, specific, proof-led, no fluff",
-  audience: "",
-  pillars: "",
-  banned: "fake stats, empty urgency, generic guru talk",
-  offer: "",
-  proof: "",
+  audience: "UGC agency producers and solo coaches who ship short-form daily",
+  pillars: "first sentence before moodboard; 10 hooks before one script; mute-test every cut",
+  banned: "fake stats, empty urgency, generic guru talk, logo in frame one",
+  offer: "Done-with-you short-form system for UGC desks",
+  proof: "Demo case: 41% 3-second retention on the 3/40 film",
 });
 
 function read<T>(key: string, fallback: T): T {
@@ -51,32 +50,32 @@ function readList<T>(key: string): T[] {
 }
 
 export function loadKeys(): ApiKeys {
-  return { ...defaultKeys(), ...read(KEYS, defaultKeys()) };
+  return { ...defaultKeys(), ...read(k("keys"), defaultKeys()) };
 }
 export function saveKeys(keys: ApiKeys) {
-  localStorage.setItem(KEYS, JSON.stringify(keys));
+  localStorage.setItem(k("keys"), JSON.stringify(keys));
 }
 export function loadJobs(): Job[] {
-  return readList<Job>(JOBS);
+  return readList<Job>(k("jobs"));
 }
 export function saveJobs(jobs: Job[]) {
-  localStorage.setItem(JOBS, JSON.stringify(jobs));
+  localStorage.setItem(k("jobs"), JSON.stringify(jobs));
 }
 export function loadBrand(): BrandKit {
-  return { ...defaultBrand(), ...read(BRAND, defaultBrand()) };
+  return { ...defaultBrand(), ...read(k("brand"), defaultBrand()) };
 }
 export function saveBrand(brand: BrandKit) {
-  localStorage.setItem(BRAND, JSON.stringify(brand));
+  localStorage.setItem(k("brand"), JSON.stringify(brand));
 }
 export function loadLearnings(): Learning[] {
-  return readList<Learning>(LEARN);
+  return readList<Learning>(k("learnings"));
 }
 export function saveLearnings(items: Learning[]) {
-  localStorage.setItem(LEARN, JSON.stringify(items.slice(0, 80)));
+  localStorage.setItem(k("learnings"), JSON.stringify(items.slice(0, 80)));
 }
 export function loadPublished(): PublishedItem[] {
-  return readList<PublishedItem>(POSTED);
+  return readList<PublishedItem>(k("published"));
 }
 export function savePublished(items: PublishedItem[]) {
-  localStorage.setItem(POSTED, JSON.stringify(items.slice(0, 80)));
+  localStorage.setItem(k("published"), JSON.stringify(items.slice(0, 80)));
 }
