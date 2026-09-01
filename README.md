@@ -1,17 +1,14 @@
 # Volta
 
-Seven specialists. One loop.
+Seven specialists. One loop. Built for UGC agencies and solo coaches.
 
-Volta is a PWA content company: Researcher, Hook Writer, Script Writer, Designer (Grok Imagine), Publisher, Analyst, Manager.
-
-- Live sources on research (Wikipedia, Hacker News, optional Grok)
-- Human gates after hook, script, and design
-- Analyze after publish, then write learnings into memory
-- Structured JSON handoffs between roles
+- `/` landing + plans
+- `/app` the desk
+- `/login` workspace
+- 60-second demo with no keys
+- Mollie when MOLLIE_API_KEY is set
 
 ```bash
 npm install
 npm run dev
 ```
-
-Add Anthropic and xAI keys in Memory.

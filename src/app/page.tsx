@@ -1,5 +1,5 @@
-import { HQApp } from "@/components/HQApp";
+import { Landing } from "@/components/Landing";
 
 export default function Home() {
-  return <HQApp />;
+  return <Landing />;
 }
