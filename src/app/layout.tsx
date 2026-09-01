@@ -2,36 +2,21 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { PwaRegister } from "@/components/PwaRegister";
 import "./globals.css";
+import "./land.css";
 
-const geistSans = Geist({
-  variable: "--font-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-});
+const geistSans = Geist({ variable: "--font-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Volta — Seven specialists. One loop.",
-  description:
-    "Volta is an AI content company in your pocket. Claude writes. Grok Imagine designs. You approve.",
+  description: "The content desk for UGC agencies and solo coaches. Claude writes. Grok Imagine designs. You approve.",
   applicationName: "Volta",
   manifest: "/manifest.json",
-  appleWebApp: {
-    capable: true,
-    title: "Volta",
-    statusBarStyle: "default",
-  },
+  appleWebApp: { capable: true, title: "Volta", statusBarStyle: "default" },
   icons: { icon: "/icon.svg", apple: "/icon.svg" },
 };
 
-export const viewport: Viewport = {
-  themeColor: "#3B6FF5",
-  width: "device-width",
-  initialScale: 1,
-};
+export const viewport: Viewport = { themeColor: "#3B6FF5", width: "device-width", initialScale: 1 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (

@@ -1,0 +1,15 @@
+.land { max-width: 980px; margin: 0 auto; padding: 20px 16px 80px; }
+.land-nav { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:8px 0 28px; }
+.land-nav nav { display:flex; gap:14px; align-items:center; font-size:14px; }
+.land-btn { background:#3b6ff5; color:#fff; padding:8px 12px; border-radius:10px; text-decoration:none; font-weight:600; }
+.land-hero h1 { font-size: clamp(2.1rem, 6vw, 4rem); line-height:1.05; margin: 8px 0 16px; }
+.land-hero h1 span { display:block; color:#3b6ff5; }
+.land-crew { display:flex; flex-wrap:wrap; gap:10px; margin: 28px 0; }
+.land-emp { display:flex; align-items:center; gap:8px; background:#fff; border:1px solid #d8dee6; padding:6px 10px; border-radius:999px; font-size:12px; }
+.land-grid, .land-grid3 { display:grid; gap:14px; margin-top:16px; }
+.land-grid { grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); }
+.land-grid3 { grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
+.land-proof article, .land-plans article { background:#fff; border:1px solid #d8dee6; border-radius:16px; padding:18px; }
+.price { font-size:2rem; font-weight:800; margin: 8px 0; }
+.price small { font-size:0.9rem; font-weight:500; color:#5c6570; }
+.auth { max-width:420px; margin: 60px auto; background:#fff; border:1px solid #d8dee6; border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:10px; }
