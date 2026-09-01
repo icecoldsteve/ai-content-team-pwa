@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f3f5f7;
+  --ink: #12151a;
+  --muted: #5c6570;
+  --line: #d8dee6;
+  --card: #ffffff;
+  --blue: #3b6ff5;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(transparent 23px, rgba(18, 21, 26, 0.035) 24px) 0 0 / 24px 24px,
+    linear-gradient(90deg, transparent 23px, rgba(18, 21, 26, 0.035) 24px) 0 0 / 24px 24px,
+    var(--paper);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+.hq { max-width: 1120px; margin: 0 auto; padding: 16px 16px 80px; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 8px 0 20px; }
+.brand { display: flex; align-items: center; gap: 10px; background: none; border: 0; cursor: pointer; text-align: left; color: inherit; }
+.brand-mark { width: 36px; height: 36px; display: grid; place-items: center; background: var(--blue); color: #fff; font-weight: 800; font-size: 11px; letter-spacing: 0.04em; }
+.brand strong { display: block; font-size: 12px; letter-spacing: 0.16em; }
+.brand em { display: block; font-style: normal; font-size: 11px; color: var(--muted); }
+.topbar nav { display: flex; gap: 6px; }
+.topbar nav button, .ghost, .chip, .primary, .pipe button { font: inherit; cursor: pointer; }
+.topbar nav button { border: 0; background: transparent; padding: 8px 12px; color: var(--muted); }
+.topbar nav button.on { color: var(--ink); font-weight: 700; }
+.kicker { letter-spacing: 0.22em; font-size: 11px; color: var(--muted); margin: 8px 0; }
+h1 { font-size: clamp(32px, 6vw, 56px); line-height: 0.95; letter-spacing: -0.03em; margin: 0 0 16px; }
+h1 span { color: var(--blue); }
+.lede { max-width: 560px; color: var(--muted); line-height: 1.5; }
+.brief-card, .emp, .out, .settings, .modal article, .archive, .loop-list { background: var(--card); border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(18, 21, 26, 0.04); }
+.brief-card, .settings { padding: 20px; margin: 24px 0; display: grid; gap: 12px; }
+label { display: grid; gap: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; }
+input, textarea { font: inherit; font-weight: 400; letter-spacing: 0; border: 1px solid var(--line); background: #fbfcfd; padding: 10px 12px; color: var(--ink); }
+.grid2 { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+@media (max-width: 700px) { .grid2 { grid-template-columns: 1fr; } }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1px solid var(--line); background: #fff; padding: 6px 10px; font-size: 12px; }
+.chip.on { background: #12151a; color: #fff; border-color: #12151a; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.primary { background: var(--blue); color: #fff; border: 0; padding: 12px 18px; font-weight: 700; }
+.primary.full { width: 100%; }
+.primary:disabled { opacity: 0.6; }
+.ghost { background: #fff; border: 1px solid var(--line); padding: 12px 18px; }
+.ghost.sm { padding: 4px 8px; font-size: 11px; }
+.hint { color: var(--muted); font-size: 13px; }
+.banner { display: flex; justify-content: space-between; gap: 12px; background: #2a100c; color: #fff; padding: 10px 14px; margin-bottom: 12px; }
+.banner button { background: none; border: 0; color: #fff; cursor: pointer; }
+.loop-list { padding: 8px; margin: 28px 0; }
+.loop-row, .archive-row { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 0; background: transparent; text-align: left; border-bottom: 1px solid var(--line); color: inherit; cursor: pointer; }
+.loop-row span, .archive-row em { color: var(--muted); font-style: normal; font-size: 13px; }
+.loop-row.last { cursor: default; }
+.dot { width: 10px; height: 10px; border-radius: 99px; background: var(--ink); }
+.team-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.emp { padding: 18px; }
+.emp header { display: flex; justify-content: space-between; align-items: start; }
+.emp header span { font-size: 10px; letter-spacing: 0.14em; color: var(--muted); }
+.emp h2 { margin: 8px 0 4px; font-size: 22px; letter-spacing: -0.03em; }
+.emp ul { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 8px; }
+.emp li { display: grid; gap: 2px; padding: 8px 10px; border: 1px solid var(--line); }
+.emp li b { font-size: 11px; letter-spacing: 0.08em; }
+.emp li span { font-size: 13px; color: var(--muted); }
+.delivers { display: flex; flex-wrap: wrap; gap: 6px; }
+.delivers i { font-style: normal; font-size: 10px; letter-spacing: 0.06em; border: 1px solid var(--line); padding: 4px 6px; }
+.workspace { display: grid; grid-template-columns: 260px 1fr; gap: 20px; align-items: start; }
+@media (max-width: 860px) { .workspace { grid-template-columns: 1fr; } }
+.pipe { list-style: none; padding: 0; margin: 0 0 16px; }
+.pipe li { border-left: 2px solid var(--line); padding: 0 0 8px 12px; }
+.pipe li.done { border-color: var(--blue); }
+.pipe li.cur button { background: var(--ink); color: #fff; }
+.pipe button { width: 100%; text-align: left; border: 1px solid var(--line); background: #fff; padding: 8px 10px; font-size: 12px; letter-spacing: 0.08em; }
+.out { padding: 16px; margin-bottom: 16px; }
+.out header { display: flex; align-items: center; gap: 8px; }
+.out h3 { margin: 0; flex: 1; font-size: 14px; letter-spacing: 0.08em; }
+.out pre { white-space: pre-wrap; font-family: var(--font-mono), ui-monospace, monospace; font-size: 13px; line-height: 1.55; color: #1b2430; }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.shots img { width: 100%; display: block; background: #eee; }
+.shots figcaption { font-size: 11px; color: var(--muted); padding-top: 6px; }
+.empty { text-align: center; padding: 60px 20px; color: var(--muted); }
+.archive { padding: 8px 0; margin-top: 24px; }
+.archive h2 { font-size: 14px; letter-spacing: 0.12em; padding: 12px 14px; margin: 0; }
+.archive-row { display: grid; }
+.archive-row strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.modal { position: fixed; inset: 0; background: rgba(18,21,26,.45); display: grid; place-items: center; padding: 20px; z-index: 20; }
+.modal article { max-width: 420px; width: 100%; padding: 24px; }
+code { font-family: var(--font-mono), ui-monospace, monospace; font-size: 12px; }
