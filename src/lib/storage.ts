@@ -1,4 +1,5 @@
 import type { BrandKit, Job, Learning, PublishedItem } from "./types";
+import type { HookDecode, QueueItem } from "./decode";
 import { loadSession, ns } from "./session";
 
 function k(name: string) {
@@ -78,4 +79,16 @@ export function loadPublished(): PublishedItem[] {
 }
 export function savePublished(items: PublishedItem[]) {
   localStorage.setItem(k("published"), JSON.stringify(items.slice(0, 80)));
+}
+export function loadDecodes(): HookDecode[] {
+  return readList<HookDecode>(k("decodes"));
+}
+export function saveDecodes(items: HookDecode[]) {
+  localStorage.setItem(k("decodes"), JSON.stringify(items.slice(0, 40)));
+}
+export function loadQueue(): QueueItem[] {
+  return readList<QueueItem>(k("queue"));
+}
+export function saveQueue(items: QueueItem[]) {
+  localStorage.setItem(k("queue"), JSON.stringify(items.slice(0, 80)));
 }

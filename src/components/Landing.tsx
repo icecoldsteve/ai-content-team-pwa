@@ -35,16 +35,17 @@ export function Landing() {
           <a href="#proof">Proof</a>
           <a href="#plans">Plans</a>
           <Link href="/login">Log in</Link>
+          <Link href="/app/engine">Engine</Link>
           <Link href="/app" className="land-btn">Open desk</Link>
         </nav>
       </header>
       <section className="land-hero">
         <p className="kicker">{PRODUCT.buyer.toUpperCase()}</p>
         <h1>Stop briefing vibes.<span> Brief the first sentence.</span></h1>
-        <p className="lede">{PRODUCT.pitch} Seven specialists. You approve the hook, the script, and the visual. Analyst only speaks after something ships.</p>
+        <p className="lede">{PRODUCT.pitch} Seven specialists. You approve the hook, the script, and the visual.</p>
         <div className="row">
           <button className="primary" onClick={startDemo}>60-second demo — no keys</button>
-          <Link href="/app" className="ghost">I already have keys</Link>
+          <Link href="/app/engine" className="ghost">Decode a reel</Link>
         </div>
       </section>
       <section className="land-crew">
@@ -54,6 +55,21 @@ export function Landing() {
             <em>{e.title.replace("THE ", "")}</em>
           </div>
         ))}
+      </section>
+      <section className="land-proof">
+        <p className="kicker">THEY SELL 62 AGENTS</p>
+        <h2>You need five moves and a gate. Not a swarm.</h2>
+        <div className="land-grid">
+          {[
+            ["01 Research", "Decode the hook. Rank the angle."],
+            ["02 Create", "Hook, script, visual — human lock."],
+            ["03 Distribute", "Queue + composer. No silent auto-post."],
+            ["04 Engage", "First comment, replies, capture line."],
+            ["05 Orchestrate", "Seven specialists. Analyst after it ships."],
+          ].map(([t, d]) => (
+            <article key={t}><h3>{t}</h3><p>{d}</p></article>
+          ))}
+        </div>
       </section>
       <section id="proof" className="land-proof">
         <p className="kicker">ONE BUYER · THREE POSTS</p>
@@ -70,7 +86,7 @@ export function Landing() {
       </section>
       <section id="plans" className="land-plans">
         <p className="kicker">ACCESS · NOT A ZIP</p>
-        <h2>Three desks. Mollie when the key is on the server.</h2>
+        <h2>Three desks.</h2>
         <div className="land-grid3">
           {PLANS.map((p) => (
             <article key={p.id}>
@@ -78,11 +94,10 @@ export function Landing() {
               <p className="price">{p.price}<small>/mo</small></p>
               <p>{p.blurb}</p>
               <ul>{p.points.map((x) => <li key={x}>{x}</li>)}</ul>
-              <button className="primary" onClick={() => checkout(p.id)}>{p.id === "hosted" ? "Start hosted" : `Choose ${p.name}`}</button>
+              <button className="primary" onClick={() => checkout(p.id)}>Choose {p.name}</button>
             </article>
           ))}
         </div>
-        <p className="hint">Point {PRODUCT.domain} at this Vercel project when DNS is ready.</p>
       </section>
     </div>
   );
